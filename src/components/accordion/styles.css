@@ -1,0 +1,46 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 600px;
+    margin: auto;
+    margin-top: 60px;
+
+    font-family: Arial, sans-serif;
+}
+
+.accordion{
+    width: 100%;
+    color: #0f0f0f;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 2px 15px;
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px 3px;
+
+    box-shadow: 2px 5px 20px rgba(0,0,0,.2);
+}
+
+.accordion h2{
+    font-size: 1.4rem;
+}
+
+
+.btn{
+    padding: .5rem .8rem;
+    border: none;
+    border-radius: 5px;
+    color: #f0f0f0;
+    font-size: 16px;
+    background-color: #1983E7;
+    transition: all .1s;
+}
+
+.btn:hover{
+    background-color: #3594ec;
+}
