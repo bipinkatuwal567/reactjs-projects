@@ -3,41 +3,42 @@ import "./style.css";
 
 export default function RandomColorGenerator() {
   const [resultColor, setResultColor] = useState("");
-  const [isHexColor, setIsHexColor] = useState(true);
+  const [isHexColor, setIsHexColor] = useState("hex");
+
+  function randomColorUtiliy(length) {
+    return Math.floor(Math.random() * length);
+  }
 
   function randomHexColorGenerator() {
     let characters = "abcdef0123456789";
+    let charLength = characters.length;
 
     let result = "#";
 
     for (let i = 0; i < 6; i++) {
-      result += characters.charAt(
-        Math.floor(Math.random() * characters.length)
-      );
+      result += characters.charAt(randomColorUtiliy(charLength));
     }
     setResultColor(result);
-    setIsHexColor(true);
   }
 
   function randomRgbColorGenerator() {
     let result = "";
 
-    const r = Math.floor(Math.random() * 255 + 1);
-    const g = Math.floor(Math.random() * 255 + 1);
-    const b = Math.floor(Math.random() * 255 + 1);
+    const r = randomColorUtiliy(255);
+    const g = randomColorUtiliy(255);
+    const b = randomColorUtiliy(255);
 
     result = `rgb(${r}, ${g}, ${b})`;
     setResultColor(result);
-    setIsHexColor(false);
   }
 
-  function hexColorHandle(){
-    setIsHexColor(true)
+  function hexColorHandle() {
+    setIsHexColor("hex");
     randomHexColorGenerator();
   }
 
-  function rgbColorHandle(){
-    setIsHexColor(false)
+  function rgbColorHandle() {
+    setIsHexColor("rgb");
     randomRgbColorGenerator();
   }
 
@@ -51,7 +52,11 @@ export default function RandomColorGenerator() {
       ></div>
       <p>{resultColor ? resultColor : `#e6a970`}</p>
 
-      <button onClick={() => isHexColor ? randomHexColorGenerator() : randomRgbColorGenerator()}>
+      <button
+        onClick={() =>
+          isHexColor === "hex" ? randomHexColorGenerator() : randomRgbColorGenerator()
+        }
+      >
         Generate Random Color
       </button>
       <div className="buttons">
