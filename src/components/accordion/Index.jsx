@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import data from "./data";
 
-export default function Index() {
+export default function Accordion() {
   const [isShow, setIsShow] = useState(null);
   const [isEnableMultiSelection, setIsEnableMultiSelecttion] = useState(false);
   const [multi, setMulti] = useState([]);
@@ -21,7 +21,7 @@ export default function Index() {
         {isEnableMultiSelection ? "Disable Multi Selection" : "Enable Multi Selection"}
       </button>
       {data.map((el) => (
-        <Accordion
+        <AccordionComp
           heading={el.question}
           content={el.answer}
           key={el.id}
@@ -37,7 +37,7 @@ export default function Index() {
   );
 }
 
-function Accordion({ heading, content, isShow, setIsShow, id, multi, setMulti, isEnableMultiSelection }) {
+function AccordionComp({ heading, content, isShow, setIsShow, id, multi, setMulti, isEnableMultiSelection }) {
   function handleSingle(){
     setIsShow(id === isShow ? null : id)
   }

@@ -1,11 +1,13 @@
 import "./App.css";
 import React, { useState } from 'react'
-import Index from './components/accordion/Index'
+import Accordion from './components/accordion/Index'
+import RandomColorGenerator from "./components/RandomColorGenerator/Index";
 
 export default function App() {
   return (
     <div className='app'>
-      <Index />
+      {/* <Accordion /> */}
+      <RandomColorGenerator />
     </div>
   )
 }

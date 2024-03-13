@@ -1,0 +1,57 @@
+.randomColor{
+    width: 350px;
+    /* background-color: red; */
+    padding: 1rem 2rem;
+    margin: auto;
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+p{
+    font-size: 18px;
+    color: #000;
+    font-weight: 600;
+}
+
+button{
+    font-family: 'poppins', sans-serif;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 99px;
+    font-size: 15px;
+    background-color: #e2e4eb;
+
+    transition: all .1s;
+}
+
+button:hover{
+    background-color: #d6dbe3;
+}
+
+button:active{
+    background-color: #cbd0d8;
+}
+
+.box{
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    background-color: #e6a970;
+    margin: auto;
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.buttons button{
+    flex-grow: 1;
+}
+
+
