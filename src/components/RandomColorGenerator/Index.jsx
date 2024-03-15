@@ -45,24 +45,29 @@ export default function RandomColorGenerator() {
   console.log(isHexColor);
 
   return (
-    <div className="randomColor">
-      <div
-        className="box"
-        style={{ backgroundColor: `${resultColor ? resultColor : ""}` }}
-      ></div>
-      <p>{resultColor ? resultColor : `#e6a970`}</p>
+    <>
+      <h2 className="heading" style={{textDecorationColor: `${resultColor}`}}>ColorWave</h2>
+      <div className="randomColor">
+        <div
+          className="box"
+          style={{ backgroundColor: `${resultColor ? resultColor : ""}` }}
+        ></div>
+        <p>{resultColor ? resultColor : `#9959FE`}</p>
 
-      <button
-        onClick={() =>
-          isHexColor === "hex" ? randomHexColorGenerator() : randomRgbColorGenerator()
-        }
-      >
-        Generate Random Color
-      </button>
-      <div className="buttons">
-        <button onClick={hexColorHandle}>Create HEX Color</button>
-        <button onClick={rgbColorHandle}>Create RGB Color</button>
+        <button
+          onClick={() =>
+            isHexColor === "hex"
+              ? randomHexColorGenerator()
+              : randomRgbColorGenerator()
+          }
+        >
+          Generate Random Color
+        </button>
+        <div className="buttons">
+          <button onClick={hexColorHandle}>Create HEX Color</button>
+          <button onClick={rgbColorHandle}>Create RGB Color</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
