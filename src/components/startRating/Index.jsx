@@ -13,7 +13,7 @@ export default function StarRating({ noOfStar = 10 }) {
   function starIncreament(id) {
     setHover(id);
   }
-
+  
   function starDecreament() {
     setHover(rating)
   }
