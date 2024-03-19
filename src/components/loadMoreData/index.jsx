@@ -34,7 +34,16 @@ export default function LoadMoreData() {
 
   return <div className="container">
     <div className="product-container">
-        
+        {
+          products.map(item => {
+            return(
+              <div className='product-item'>
+                <img src={item.thumbnail} alt={item.title} />
+                <p>{item.title}</p>
+              </div>
+            )
+          })
+        }
     </div>
     <button className="button">
         Load more data..
